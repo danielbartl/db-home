@@ -59,7 +59,7 @@ other pages can set the label and headline in front matter:
 
 ```md
 ogKicker: Work with me
-ogTitle: An engineer who writes the code and helps the team work better
+ogTitle: An engineer who has built the code, the teams and the company
 ```
 
 `og/fonts/` holds TTF copies of the site fonts (Satori can't read WOFF2), licensed under the

@@ -686,7 +686,7 @@ p { text-wrap: pretty; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
   gap: 1rem;
 }
 .services li {
@@ -697,7 +697,7 @@ p { text-wrap: pretty; }
   box-shadow: var(--shadow);
 }
 .services .sticky { transform: rotate(-2deg); }
-.services li:nth-child(2) .sticky { transform: rotate(1.5deg); }
+.services li:nth-child(even) .sticky { transform: rotate(1.5deg); }
 .services h3 { font-size: 1.5rem; margin: 1.1rem 0 0.6rem; }
 .services p { margin: 0; color: var(--text-soft); font-size: 0.98rem; }
 

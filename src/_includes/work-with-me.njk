@@ -37,7 +37,7 @@
     <h2>{{ t.servicesTitle }}</h2>
   </div>
   <ul class="services">
-    {%- set stickyColors = ["", "sticky-blue", "sticky-green"] %}
+    {%- set stickyColors = ["", "sticky-blue", "sticky-green", ""] %}
     {%- for service in t.services %}
     <li>
       <span class="sticky {{ stickyColors[loop.index0] }}">{{ service.sticky }}</span>

@@ -4,10 +4,10 @@ export default {
   en: {
     eyebrow: "Work with me",
     otherLanguage: { label: "Deutsch", lang: "de", url: "/de/zusammenarbeit/" },
-    headline: "An engineer who writes the code",
-    headlineEmphasis: "and helps the team work better",
+    headline: "An engineer who has built",
+    headlineEmphasis: "the code, the teams and the company",
     lede:
-      "For more than 20 years I have built software products with teams in startups, enterprises and the public sector: as developer, architect, analyst, Scrum Master and Product Owner. I bring the Java craft and the agile practice together, so your team ships thin, valuable slices and keeps doing it.",
+      "For more than 20 years I have built software products with teams in startups, enterprises and the public sector: as developer, architect, analyst, Scrum Master and Product Owner. I also founded and led a consultancy of more than 100 people, built on self-organizing teams without middle management. I bring that experience to every level: your code, your team and your organization.",
     mailSubject: "Project inquiry",
     stats: [
       { value: "20+", label: "years building software on the JVM" },
@@ -31,6 +31,11 @@ export default {
         sticky: "Coach",
         title: "Agile coaching & product",
         text: "Scrum Master for one or several teams, sparring partner for Product Owners, slicing backlogs into small MVPs and writing requirements teams can test, e.g. with BDD.",
+      },
+      {
+        sticky: "Organize",
+        title: "Agile organization & leadership",
+        text: "For 17 years I ran a company of 100+ people on self-organizing teams (cells) without middle management, with labs for self-chosen topics and heavy investment in T-shaped skills. I help founders and CTOs build an organization where agile teams thrive.",
       },
     ],
     tagsLabel: "Technologies and methods",
@@ -69,10 +74,10 @@ export default {
     eyebrow: "Zusammenarbeit",
     location: "München",
     otherLanguage: { label: "English", lang: "en", url: "/work-with-me/" },
-    headline: "Ich schreibe den Code",
-    headlineEmphasis: "und helfe dem Team, besser zusammenzuarbeiten",
+    headline: "Ich habe Code geschrieben, Teams begleitet",
+    headlineEmphasis: "und ein Unternehmen aufgebaut",
     lede:
-      "Seit über 20 Jahren entwickle ich Softwareprodukte gemeinsam mit Teams in Startups, Konzernen und der öffentlichen Verwaltung: als Entwickler, Architekt, Analyst, Scrum Master und Product Owner. Ich verbinde Java-Handwerk mit agiler Praxis, damit Ihr Team kleine, wertvolle Inkremente liefert, und zwar dauerhaft.",
+      "Seit über 20 Jahren entwickle ich Softwareprodukte gemeinsam mit Teams in Startups, Konzernen und der öffentlichen Verwaltung: als Entwickler, Architekt, Analyst, Scrum Master und Product Owner. Außerdem habe ich ein Beratungsunternehmen mit über 100 Mitarbeitenden gegründet und geführt, aufgebaut auf selbstorganisierten Teams ohne mittleres Management. Diese Erfahrung bringe ich auf jeder Ebene ein: in Ihren Code, Ihr Team und Ihre Organisation.",
     mailSubject: "Projektanfrage",
     stats: [
       { value: "20+", label: "Jahre Softwareentwicklung auf der JVM" },
@@ -96,6 +101,11 @@ export default {
         sticky: "Coachen",
         title: "Agile Coaching & Produktentwicklung",
         text: "Scrum Master für ein oder mehrere Teams, Sparringspartner für Product Owner, Backlogs in kleine MVPs schneiden und Anforderungen so formulieren, dass Teams sie testen können, z. B. mit BDD.",
+      },
+      {
+        sticky: "Organisieren",
+        title: "Agile Organisation & Führung",
+        text: "17 Jahre lang habe ich ein Unternehmen mit über 100 Mitarbeitenden geführt: selbstorganisierte Teams (Zellen) ohne mittleres Management, Labs für selbstgewählte Themen und konsequente Investition in T-shaped Skills. Ich unterstütze Geschäftsführung und CTOs dabei, eine Organisation aufzubauen, in der agile Teams aufblühen.",
       },
     ],
     tagsLabel: "Technologien und Methoden",
