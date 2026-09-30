@@ -1,0 +1,18 @@
+{
+  "name": "danielbartl.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website of Daniel Bartl",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

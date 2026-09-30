@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+bodyClass: is-post
+---
+{%- set posts = collections.posts | reverse %}
+{%- set newer = posts | getPreviousCollectionItem %}
+{%- set older = posts | getNextCollectionItem %}
+<article class="wrap post">
+  <header class="post-header">
+    <a class="back-link" href="/notes/">← All notes</a>
+    <p class="meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ content | readingTime }}</span>
+    </p>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  <aside class="author-card">
+    <img src="/assets/img/daniel.webp" alt="" width="64" height="80" loading="lazy">
+    <p>
+      <strong>Daniel Bartl</strong> is an independent software engineer and agile practitioner in Munich.
+      <a href="/about/">More about me</a> · <a href="/feed.xml">Subscribe via RSS</a>
+    </p>
+  </aside>
+
+  {% if newer or older %}
+  <nav class="post-pager" aria-label="More notes">
+    {% if older %}
+      <a class="older" href="{{ older.url }}"><span>Older</span>{{ older.data.title }}</a>
+    {% endif %}
+    {% if newer %}
+      <a class="newer" href="{{ newer.url }}"><span>Newer</span>{{ newer.data.title }}</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</article>

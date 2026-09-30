@@ -1,0 +1,11 @@
+<ol class="note-list">
+  {%- for post in notes %}
+  <li class="note-item">
+    <a href="{{ post.url }}">
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.content | excerpt(170) }}</p>
+    </a>
+  </li>
+  {%- endfor %}
+</ol>

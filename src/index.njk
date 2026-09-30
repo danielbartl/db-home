@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+bodyClass: is-home
+---
+{%- set posts = collections.posts | reverse %}
+{%- set latest = posts | first %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Independent · {{ site.location }}</p>
+      <h1>Software engineer &amp; agile enthusiast, passionate about <em>product discovery, delivery&nbsp;&amp;&nbsp;operations</em>.</h1>
+      <p class="lede">
+        I help teams build software people actually value. Member of the
+        <a href="{{ site.allwerker }}">allwerker</a> cooperative. Lifelong learner.
+        Here I write short notes on agile, Event Modeling, and the craft of building products.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="/notes/">Read the notes</a>
+        <a class="button" href="/about/">About me</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <picture>
+        <source srcset="/assets/img/daniel.webp" type="image/webp">
+        <img src="/assets/img/daniel.jpg" alt="Portrait of Daniel Bartl" width="720" height="900">
+      </picture>
+      <span class="sticky sticky-orange s1" aria-hidden="true">ProblemDiscovered</span>
+      <span class="sticky sticky-blue s2" aria-hidden="true">Deliver&nbsp;Slice</span>
+      <span class="sticky sticky-green s3" aria-hidden="true">Lessons Learned</span>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <ol class="timeline" aria-label="How I think about product work">
+      <li><span class="sticky sticky-orange">Discovered</span><small>Understand the problem and the people who have it.</small></li>
+      <li><span class="sticky sticky-orange">Delivered</span><small>Ship thin, vertical, user‑centric slices.</small></li>
+      <li><span class="sticky sticky-orange">Operated</span><small>You build it, you run it, you learn from it.</small></li>
+      <li><span class="sticky sticky-green">Learned</span><small>Then start again, a bit wiser.</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <blockquote>
+      <p>Value exploration over cost estimation.</p>
+      <footer>— from <a href="/eventmodeling/">Event Modeling</a></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>Latest notes</h2>
+    <a class="more" href="/notes/">All {{ posts.length }} notes →</a>
+  </div>
+
+  <a class="featured" href="{{ latest.url }}">
+    <p class="meta"><span class="badge">New</span> <time datetime="{{ latest.date | isoDate }}">{{ latest.date | readableDate }}</time> · {{ latest.content | readingTime }}</p>
+    <h3>{{ latest.data.title }}</h3>
+    <p>{{ latest.content | excerpt(320) }}</p>
+    <span class="read-more">Continue reading →</span>
+  </a>
+
+  {%- set notes = posts.slice(1, 7) %}
+  {% include "note-list.njk" %}
+</section>

@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Notes
+description: Short notes on agile, Event Modeling, product discovery and building software.
+permalink: /notes/
+---
+<div class="wrap section page-intro">
+  <h1>Notes</h1>
+  <p class="lede">Short thoughts on agile, Event Modeling, product discovery, delivery &amp; operations. Mostly serious, sometimes not. Subscribe via <a href="/feed.xml">RSS</a>.</p>
+</div>
+
+<div class="wrap section archive">
+  {%- for group in collections.posts | reverse | groupByYear %}
+  <section class="year-group">
+    <h2 class="year">{{ group.year }}</h2>
+    {%- set notes = group.posts %}
+    {% include "note-list.njk" %}
+  </section>
+  {%- endfor %}
+</div>
