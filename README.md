@@ -42,15 +42,9 @@ src/
 
 Fonts are self-hosted (Newsreader, Geist, Geist Mono), so the site makes no third-party requests and uses no cookies or analytics.
 
-## Deploy: GitHub Pages
-
-1. Push this folder to a GitHub repository (branch `main`).
-2. In the repository go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy.yml` builds and deploys on every push to `main`.
-4. For the custom domain, enter `danielbartl.com` under **Settings → Pages → Custom domain** and point DNS at GitHub Pages
-   (apex `A` records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and/or a `www` `CNAME` to `<user>.github.io`).
-
 ## Deploy: Cloudflare Pages
+
+The site is hosted on Cloudflare Pages, which builds and deploys automatically on every push to `main`.
 
 1. **Workers & Pages → Create → Pages → Connect to Git** and select the repository.
 2. Build command: `npm run build`, build output directory: `_site`. Node version comes from `.node-version`.
