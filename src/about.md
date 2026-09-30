@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 title: About me
+ogKicker: About me
+ogTitle: "Hi, I’m Daniel. Software engineer and agile practitioner in Munich."
 description: Born in Sarajevo, based in Munich. Software engineer, agile practitioner and member of the allwerker cooperative.
 permalink: /about/
 ---
@@ -17,6 +19,7 @@ permalink: /about/
     <div class="actions">
       <a class="button primary" href="mailto:{{ site.email }}">Email me</a>
       <a class="button" href="{{ site.linkedin }}" rel="me">LinkedIn</a>
+      <a class="button" href="{{ site.github }}" rel="me">GitHub</a>
     </div>
   </div>
 </header>
@@ -33,7 +36,11 @@ In 2004, I started a technology consulting company, mainly focusing on building 
 
 Since the beginning of 2024, I have been working as an independent agile practitioner and software engineer again and as a proud member of the [allwerker cooperative]({{ site.allwerker }}), which is quite an interesting joint effort of a few of my friends and former colleagues.
 
-You can reach me at [{{ site.email }}](mailto:{{ site.email }}) and on [LinkedIn]({{ site.linkedin }}).
+Since 2010, I have also been organizing the [Lightweight Java User Group]({{ site.ljug }}) in Munich.
+
+These days, I am mostly building open-source tooling for full-stack Java applications with server-side rendered UIs in Apache Wicket: [Wicket Oat]({{ projects[0].url }}), a themeable component library based on the [Oat](https://oat.ink/) CSS library, and the [Wicket Spring Boot Starter]({{ projects[1].url }}), which brings Wicket 10 to Spring Boot 4 with a single dependency.
+
+You can reach me at [{{ site.email }}](mailto:{{ site.email }}), on [LinkedIn]({{ site.linkedin }}) and on [X]({{ site.x }}). My open-source work is on [GitHub]({{ site.github }}).
 
 Have a good one!
 

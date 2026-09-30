@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 bodyClass: is-home
+ogKicker: Independent · Munich
 ---
 {%- set posts = collections.posts | reverse %}
 {%- set latest = posts | first %}
@@ -10,13 +11,15 @@ bodyClass: is-home
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Independent · {{ site.location }}</p>
       <h1>Software engineer &amp; agile enthusiast, passionate about <em>product discovery, delivery&nbsp;&amp;&nbsp;operations</em>.</h1>
       <p class="lede">
-        I help teams build software people actually value. Member of the
-        <a href="{{ site.allwerker }}">allwerker</a> cooperative. Lifelong learner.
-        Here I write short notes on agile, Event Modeling, and the craft of building products.
+        I help teams build software people actually value. Lifelong learner.
+        Here I write short notes on agile and the craft of building products.
+        Member of the <a href="{{ site.allwerker }}">allwerker</a> cooperative.
+        Organizer of the <a href="{{ site.ljug }}">Lightweight Java User Group</a> since 2010.
       </p>
       <div class="actions">
         <a class="button primary" href="/notes/">Read the notes</a>
         <a class="button" href="/about/">About me</a>
+        <a class="button" href="/work-with-me/">Work with me</a>
       </div>
     </div>
     <figure class="portrait">
@@ -64,4 +67,23 @@ bodyClass: is-home
 
   {%- set notes = posts.slice(1, 7) %}
   {% include "note-list.njk" %}
+</section>
+
+<section class="wrap section projects">
+  <div class="section-head">
+    <h2>Currently building</h2>
+  </div>
+  <p class="lede">Open-source tools for full-stack Java applications with server-side rendered UIs in Apache Wicket.</p>
+
+  <ul class="note-list">
+    {%- for project in projects %}
+    <li class="note-item">
+      <a href="{{ project.url }}">
+        <span class="kicker">{{ project.kicker }}</span>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
 </section>

@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Impressum
+ogKicker: Legal notice
+description: Impressum (legal notice) of danielbartl.com.
+permalink: /impressum/
+eleventyExcludeFromCollections: true
+---
+<div class="wrap section legal" lang="de">
+  <p class="eyebrow">Legal notice</p>
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    {{ site.author }}<br>
+    {{ site.street }}<br>
+    {{ site.city }}<br>
+    Deutschland
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+    Kontaktformular: <a href="/contact/">danielbartl.com/contact</a>
+  </p>
+
+  <h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {{ site.vatId }}</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>{{ site.author }}, Anschrift wie oben</p>
+</div>
