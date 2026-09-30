@@ -11,7 +11,7 @@ export default {
     mailSubject: "Project inquiry",
     stats: [
       { value: "20+", label: "years building software on the JVM" },
-      { value: "17", label: "years founding and running a Java consultancy" },
+      { value: "17", label: "years founding and running a Java consultancy that grew to 100+ people" },
       { value: "2,000+", label: "members in the {ljug} I organize", ljugLabel: "Java user group" },
       { value: "{certs}", label: "certifications in Java, Spring, Scrum and product" },
     ],
@@ -76,7 +76,7 @@ export default {
     mailSubject: "Projektanfrage",
     stats: [
       { value: "20+", label: "Jahre Softwareentwicklung auf der JVM" },
-      { value: "17", label: "Jahre als Gründer und Geschäftsführer eines Java-Beratungsunternehmens" },
+      { value: "17", label: "Jahre als Gründer und Geschäftsführer eines Java-Beratungsunternehmens mit zuletzt über 100 Mitarbeitenden" },
       { value: "2.000+", label: "Mitglieder in der {ljug}, die ich organisiere", ljugLabel: "Java User Group" },
       { value: "{certs}", label: "Zertifizierungen in Java, Spring, Scrum und Produktmanagement" },
     ],
