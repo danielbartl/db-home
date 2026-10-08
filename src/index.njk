@@ -13,7 +13,7 @@ ogKicker: Independent · Munich
       <p class="lede">
         I help teams build software people actually value. Lifelong learner.
         Here I write short notes on agile and the craft of building products.
-        Member of the <a href="{{ site.allwerker }}">allwerker</a> cooperative.
+        Member of the <a href="{{ site.allwerker }}">allwerker</a> cooperative, where I lead <a href="{{ site.fullstack4j }}">fullstack4j</a>.
         Organizer of the <a href="{{ site.ljug }}">Lightweight Java User Group</a> since 2010.
       </p>
       <div class="actions">
@@ -52,11 +52,13 @@ ogKicker: Independent · Munich
   </div>
 </section>
 
+{% include "fullstack4j.njk" %}
+
 <section class="wrap section projects">
   <div class="section-head">
     <h2>Currently building</h2>
   </div>
-  <p class="lede">Open-source tools for full-stack Java on Spring Boot: server-side rendered UIs in Apache Wicket, and batch jobs that write to MongoDB.</p>
+  <p class="lede">Open-source tools for full-stack Java on Spring Boot: the Wicket helpers behind fullstack4j, and batch jobs that write to MongoDB.</p>
 
   <ul class="note-list">
     {%- for project in projects %}

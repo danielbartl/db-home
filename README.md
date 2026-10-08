@@ -36,7 +36,9 @@ src/
   _data/work.js           text of the "Work with me" page, English and German
   _data/certifications.js certifications and badge images for that page
   _data/projects.js       open-source projects on the home page
+  _data/fullstack4j.js    the fullstack4j offering (home and Work with me), English and German
   _includes/schema.njk    structured data (schema.org JSON-LD) for search engines
+  _includes/fullstack4j.njk  the fullstack4j section, shared by home and Work with me
   index.njk               home page
   notes.njk               archive, grouped by year
   about.md                about page

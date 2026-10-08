@@ -141,7 +141,7 @@ export default {
   },
 
   // Shared by both languages
-  tags: ["Java", "Spring Boot", "Spring Framework", "Apache Wicket", "Hibernate / JPA", "Spring Data", "MongoDB", "SQL", "Gradle", "Maven", "JUnit", "Mockito", "Git", "CI/CD", "TDD", "BDD / Gherkin", "Scrum", "Kanban", "LeSS", "Lean Startup", "Agile Kata"],
+  tags: ["Java", "Spring Boot", "Spring Framework", "Spring Modulith", "Apache Wicket", "Hibernate / JPA", "Spring Data", "MongoDB", "SQL", "Gradle", "Maven", "JUnit", "Mockito", "Testcontainers", "Git", "CI/CD", "TDD", "BDD / Gherkin", "Scrum", "Kanban", "Shape Up", "LeSS", "Lean Startup", "Agile Kata"],
   testimonial: {
     lang: "en",
     text: "Daniel made an enormous personal contribution to the development of the o2 web portal. He was a key player in the introduction of the agile development methodology and influenced technology choices.",
