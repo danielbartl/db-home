@@ -1,3 +1,6 @@
 node_modules/
 _site/
 .DS_Store
+
+# Private source material (CV, original badge images)
+misc/

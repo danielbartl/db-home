@@ -1,0 +1,103 @@
+{#- Shared markup for /work-with-me/ and /de/zusammenarbeit/; text lives in src/_data/work.js -#}
+{%- set t = work[lang] %}
+{%- set mailto = "mailto:" + site.email + "?subject=" + (t.mailSubject | urlencode) %}
+{%- set badges = certifications | selectattr("badge") %}
+{%- set otherCerts = certifications | rejectattr("badge") %}
+{%- macro contactButtons() %}
+    <div class="actions">
+      <a class="button primary" href="{{ mailto }}">{{ site.email }}</a>
+      <a class="button" href="{{ site.linkedin }}" rel="me">LinkedIn</a>
+      <a class="button" href="{{ site.github }}" rel="me">GitHub</a>
+    </div>
+{%- endmacro %}
+<section class="hero work-hero">
+  <div class="wrap">
+    <p class="eyebrow">
+      <span class="dot" aria-hidden="true"></span> {{ t.eyebrow }} · {{ t.location or site.location }} ·
+      <a class="lang-switch" href="{{ t.otherLanguage.url }}" hreflang="{{ t.otherLanguage.lang }}" lang="{{ t.otherLanguage.lang }}">{{ t.otherLanguage.label }}</a>
+    </p>
+    <h1>{{ t.headline }} <em>{{ t.headlineEmphasis }}</em>.</h1>
+    <p class="lede">{{ t.lede }}</p>
+    {{ contactButtons() }}
+
+    <dl class="stats">
+      {%- for stat in t.stats %}
+      {%- set parts = stat.label.split("{ljug}") %}
+      <div>
+        <dt>{{ certifications.length if stat.value == "{certs}" else stat.value }}</dt>
+        <dd>{{ parts[0] }}{% if parts.length > 1 %}<a href="{{ site.ljug }}">{{ stat.ljugLabel }}</a>{{ parts[1] }}{% endif %}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>{{ t.servicesTitle }}</h2>
+  </div>
+  <ul class="services">
+    {%- set stickyColors = ["", "sticky-blue", "sticky-green", ""] %}
+    {%- for service in t.services %}
+    <li>
+      <span class="sticky {{ stickyColors[loop.index0] }}">{{ service.sticky }}</span>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.text }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+
+  <ul class="tags" aria-label="{{ t.tagsLabel }}">
+    {%- for tag in work.tags %}
+    <li>{{ tag }}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="quote-band flush">
+  <div class="wrap">
+    <blockquote class="testimonial" lang="{{ work.testimonial.lang }}">
+      <p>{{ work.testimonial.text }}</p>
+      <footer>— {{ work.testimonial.source }}</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>{{ t.engagementsTitle }}</h2>
+  </div>
+  <ol class="engagements">
+    {%- for item in t.engagements %}
+    <li>
+      <p class="meta">{{ item.meta }}</p>
+      <h3>{{ item.role }}</h3>
+      <p>{{ item.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="wrap section certs">
+  <div class="section-head">
+    <h2>{{ t.certsTitle }}</h2>
+  </div>
+  <ul class="badges" lang="en">
+    {%- for cert in badges %}
+    <li>
+      <img src="/assets/img/badges/{{ cert.badge }}" alt="" width="128" height="128" loading="lazy">
+      <span>{{ cert.name }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p class="more-certs">{{ t.certsAlso }}: <span lang="en">{% for cert in otherCerts %}{{ cert.name }}{% if not loop.last %} · {% endif %}{% endfor %}</span>.</p>
+  <p class="more-certs">{{ t.languages }}</p>
+</section>
+
+<section class="wrap section">
+  <div class="cta">
+    <h2>{{ t.ctaTitle }}</h2>
+    <p class="lede">{{ t.ctaText }}</p>
+    {{ contactButtons() }}
+  </div>
+</section>

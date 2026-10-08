@@ -1,0 +1,38 @@
+{#- Structured data (schema.org JSON-LD) describing the site, its author and the current page -#}
+{%- set personId = site.url + "/#person" %}
+{%- set person = {
+  "@type": "Person",
+  "@id": personId,
+  "name": site.author,
+  "url": site.url + "/",
+  "image": "/assets/img/daniel.jpg" | absoluteUrl(site.url),
+  "jobTitle": "Software Engineer & Agile Coach",
+  "description": site.description,
+  "email": "mailto:" + site.email,
+  "address": { "@type": "PostalAddress", "addressLocality": "Munich", "addressCountry": "DE" },
+  "knowsLanguage": ["de", "en", "hr"],
+  "knowsAbout": ["Java", "Spring Boot", "Apache Wicket", "Software architecture", "Agile coaching", "Scrum", "Kanban", "LeSS", "Product discovery"],
+  "memberOf": { "@type": "Organization", "name": "allwerker", "url": site.allwerker },
+  "sameAs": [site.linkedin, site.github, site.x]
+} %}
+{%- set graph = [
+  person,
+  { "@type": "WebSite", "@id": site.url + "/#website", "url": site.url + "/", "name": site.title, "inLanguage": site.lang, "publisher": { "@id": personId } }
+] %}
+{%- if layout == "layouts/post.njk" %}
+  {%- set _ = graph.push({
+    "@type": "BlogPosting",
+    "headline": title,
+    "url": canonical,
+    "mainEntityOfPage": canonical,
+    "datePublished": page.date | isoDate,
+    "image": ogImageUrl,
+    "inLanguage": lang or site.lang,
+    "author": { "@id": personId },
+    "publisher": { "@id": personId },
+    "isPartOf": { "@id": site.url + "/#website" }
+  }) %}
+{%- elif page.url == "/about/" %}
+  {%- set _ = graph.push({ "@type": "ProfilePage", "url": canonical, "mainEntity": { "@id": personId } }) %}
+{%- endif %}
+<script type="application/ld+json">{{ { "@context": "https://schema.org", "@graph": graph } | jsonScript | safe }}</script>

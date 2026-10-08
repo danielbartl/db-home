@@ -1,3 +1,9 @@
+import { existsSync } from "node:fs";
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { renderOgImage } from "./og/render.js";
+import site from "./src/_data/site.js";
+
 const dateFormat = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
   month: "short",
@@ -35,6 +41,30 @@ export default function (eleventyConfig) {
     const words = stripHtml(html).split(" ").length;
     return `${Math.max(1, Math.round(words / 220))} min read`;
   });
+
+  // Social preview images: pages call `ogImage` while rendering, the PNGs are
+  // written after the build. Unchanged images are not re-rendered in --serve.
+  const ogPending = new Map();
+  const ogRendered = new Map();
+  eleventyConfig.addFilter("ogImage", function (title, kicker) {
+    const slug = this.page.url.replace(/\.html$/, "").replace(/^\/|\/$/g, "").replaceAll("/", "-") || "home";
+    ogPending.set(slug, { title, kicker, footer: new URL(site.url).host });
+    return `/og/${slug}.png`;
+  });
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const outDir = path.join(dir.output, "og");
+    await mkdir(outDir, { recursive: true });
+    for (const [slug, input] of ogPending) {
+      const file = path.join(outDir, `${slug}.png`);
+      const key = JSON.stringify(input);
+      if (ogRendered.get(slug) === key && existsSync(file)) continue;
+      await writeFile(file, await renderOgImage(input));
+      ogRendered.set(slug, key);
+    }
+  });
+
+  // JSON for <script type="application/ld+json">, safe to inline in HTML
+  eleventyConfig.addFilter("jsonScript", (value) => JSON.stringify(value).replace(/</g, "\\u003c"));
 
   // Group posts by year, newest first: [{ year, posts }]
   eleventyConfig.addFilter("groupByYear", (posts) => {

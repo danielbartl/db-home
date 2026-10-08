@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: Contact
+ogKicker: Contact
+ogTitle: Get in touch
+description: Send Daniel Bartl a message.
+permalink: /contact/
+---
+<div class="wrap section contact">
+  <p class="eyebrow">Contact</p>
+  <h1>Get in touch</h1>
+  <p class="lede">Write me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or use this form. I will answer by email.</p>
+
+  <form class="contact-form" action="/api/contact" method="post">
+    <label>
+      <span>Name</span>
+      <input name="name" type="text" autocomplete="name" maxlength="200" required>
+    </label>
+    <label>
+      <span>Email</span>
+      <input name="email" type="email" autocomplete="email" maxlength="320" required>
+    </label>
+    <label>
+      <span>Message</span>
+      <textarea name="message" rows="7" maxlength="5000" required></textarea>
+    </label>
+    {#- Honeypot: hidden from people, bots tend to fill it in #}
+    <label class="contact-trap" aria-hidden="true">
+      <span>Website</span>
+      <input name="website" type="text" tabindex="-1" autocomplete="off">
+    </label>
+    <p class="contact-note">Your message is processed as described in the <a href="/datenschutz/" hreflang="de">privacy policy</a> (in German).</p>
+    <button class="button primary" type="submit">Send message</button>
+  </form>
+</div>
