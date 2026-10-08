@@ -444,8 +444,9 @@ p { text-wrap: pretty; }
 .section-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
 .more { font-weight: 500; text-decoration: none; white-space: nowrap; }
 
-/* Featured card */
-.featured {
+/* Featured card (also the fullstack4j offering card) */
+.featured,
+.offering {
   display: block;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   border-radius: var(--radius);
@@ -458,7 +459,8 @@ p { text-wrap: pretty; }
   overflow: hidden;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.featured::before {
+.featured::before,
+.offering::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
@@ -466,8 +468,10 @@ p { text-wrap: pretty; }
   background: var(--note-orange);
 }
 .featured:hover { color: var(--text); transform: translateY(-2px); border-color: var(--muted); }
-.featured h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 0.8rem 0 0.75rem; }
-.featured p:not(.meta) {
+.featured h3,
+.offering h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 0.8rem 0 0.75rem; }
+.featured p:not(.meta),
+.offering .pitch {
   font-family: var(--serif);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -522,6 +526,18 @@ p { text-wrap: pretty; }
 /* Projects */
 .projects + .section { padding-top: 0; }
 .projects .lede { margin: -0.75rem 0 0; }
+
+/* fullstack4j offering */
+.offering-section + .projects { padding-top: 0; }
+.offering .stack { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.offering .stack .sticky { transform: rotate(-1.5deg); }
+.offering .stack .sticky:nth-child(even) { transform: rotate(1.5deg); }
+.offering .actions { margin-top: 1.75rem; }
+/* after the shared .engagements rules would reset it, hence the extra specificity */
+.offering + .offering-steps {
+  margin-top: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
 
 /* Notes archive */
 .page-intro { padding-bottom: 0; }
@@ -721,7 +737,8 @@ p { text-wrap: pretty; }
 .quote-band.flush { margin-top: 0; }
 .quote-band .testimonial p { font-size: clamp(1.5rem, 3.2vw, 2.3rem); line-height: 1.25; }
 
-.engagements {
+.engagements,
+.offering-steps {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -729,10 +746,14 @@ p { text-wrap: pretty; }
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
   gap: 2rem 3rem;
 }
-.engagements li { padding-top: 1.25rem; border-top: 1px solid var(--line); }
-.engagements .meta { margin: 0; }
-.engagements h3 { font-size: 1.45rem; margin: 0.4rem 0 0.5rem; }
-.engagements p:not(.meta) { margin: 0; color: var(--text-soft); font-size: 0.98rem; }
+.engagements li,
+.offering-steps li { padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.engagements .meta,
+.offering-steps .meta { margin: 0; }
+.engagements h3,
+.offering-steps h3 { font-size: 1.45rem; margin: 0.4rem 0 0.5rem; }
+.engagements p:not(.meta),
+.offering-steps p:not(.meta) { margin: 0; color: var(--text-soft); font-size: 0.98rem; }
 
 .certs { padding-top: 0; }
 .badges {

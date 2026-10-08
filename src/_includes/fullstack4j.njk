@@ -1,0 +1,35 @@
+{#- The fullstack4j offering; text lives in src/_data/fullstack4j.js. Set `showSteps` before including to list the engagement steps. -#}
+{%- set f = fullstack4j[lang or "en"] %}
+<section class="wrap section offering-section" id="fullstack4j">
+  <div class="section-head">
+    <h2>{{ f.heading }}</h2>
+    <a class="more" href="{{ site.fullstack4j }}" hreflang="en">fullstack4j.dev →</a>
+  </div>
+
+  <div class="offering">
+    <p class="meta">{{ f.kicker }}</p>
+    <h3>{{ f.title }}</h3>
+    <p class="pitch">{{ f.text }}</p>
+    <ul class="stack" lang="en" aria-label="Stack and method">
+      {%- for item in fullstack4j.stack %}
+      <li class="sticky {{ 'sticky-green' if item.method else 'sticky-blue' }}">{{ item.label }}</li>
+      {%- endfor %}
+    </ul>
+    <div class="actions">
+      <a class="button primary" href="{{ site.fullstack4j }}" hreflang="en">{{ f.visit }}</a>
+      <a class="button" href="/fullstack/" hreflang="en">{{ f.why }}</a>
+    </div>
+  </div>
+
+  {%- if showSteps %}
+  <ol class="offering-steps" aria-label="{{ f.stepsLabel }}">
+    {%- for step in f.steps %}
+    <li>
+      <p class="meta">{{ step.meta }}</p>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- endif %}
+</section>

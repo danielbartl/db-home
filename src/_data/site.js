@@ -16,6 +16,7 @@ export default {
   x: "https://x.com/danielbartl",
   xHandle: "@danielbartl",
   allwerker: "https://www.allwerker.com",
+  fullstack4j: "https://fullstack4j.dev",
   ljug: "https://www.ljugminga.org/",
   band: "https://071.band/",
   location: "Munich, Germany",
