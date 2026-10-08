@@ -526,6 +526,11 @@ p { text-wrap: pretty; }
 /* Projects */
 .projects + .section { padding-top: 0; }
 .projects .lede { margin: -0.75rem 0 0; }
+.project-group { margin: 2rem 0 0; }
+.project-group a { color: var(--accent); text-decoration: none; }
+.project-group a:hover { text-decoration: underline; }
+/* fill the row, so a group of two has no gap */
+.project-list { margin-top: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
 
 /* fullstack4j offering */
 .offering-section + .projects { padding-top: 0; }
@@ -533,6 +538,33 @@ p { text-wrap: pretty; }
 .offering .stack .sticky { transform: rotate(-1.5deg); }
 .offering .stack .sticky:nth-child(even) { transform: rotate(1.5deg); }
 .offering .actions { margin-top: 1.75rem; }
+.offering {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+/* One slice on an Event Modeling board, next to the pitch */
+.slice-board { margin: 0; }
+.slice-board svg { display: block; width: 100%; height: auto; color: var(--muted); }
+.slice-board figcaption { margin-top: 0.6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-align: center; }
+.em-lane { stroke: var(--line); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.em-lane-label { font: 500 9px var(--mono); fill: var(--muted); letter-spacing: 0.06em; }
+.em-slice { fill: var(--accent-soft); fill-opacity: 0.55; stroke: var(--note-orange); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.em-wire { fill: var(--surface); stroke: var(--muted); stroke-width: 1.1; }
+.em-wire-title { font: 500 9px var(--mono); fill: var(--text-soft); }
+.em-wire-line { fill: var(--line); }
+.em-button { fill: var(--text); }
+.em-button-text { font: 600 8.5px var(--sans); fill: var(--bg); }
+.em-note { filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.12)) drop-shadow(0 4px 6px rgb(0 0 0 / 0.16)); }
+.em-cmd { fill: var(--note-blue); }
+.em-evt { fill: var(--note-orange); }
+.em-view { fill: var(--note-green); }
+.em-note-text { font: 500 11px var(--mono); fill: var(--note-text); }
+.em-arrow { fill: none; stroke: currentColor; stroke-width: 1.3; }
+.em-next { opacity: 0.7; }
+.em-tag { font: 9px var(--mono); fill: var(--muted); }
 /* after the shared .engagements rules would reset it, hence the extra specificity */
 .offering + .offering-steps {
   margin-top: 2.5rem;
@@ -818,6 +850,8 @@ p { text-wrap: pretty; }
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }
+  .offering { grid-template-columns: 1fr; }
+  .slice-board { max-width: 21rem; width: 100%; justify-self: center; }
   .portrait { justify-self: center; max-width: 19rem; order: -1; }
   .portrait .s1 { left: -8%; }
   .portrait .s2 { right: -6%; }

@@ -58,10 +58,16 @@ ogKicker: Independent · Munich
   <div class="section-head">
     <h2>Currently building</h2>
   </div>
-  <p class="lede">Open-source tools for full-stack Java on Spring Boot: the Wicket helpers behind fullstack4j, and batch jobs that write to MongoDB.</p>
+  <p class="lede">Open-source tools for full-stack Java on Spring Boot.</p>
 
-  <ul class="note-list">
-    {%- for project in projects %}
+  {%- set projectGroups = [
+    { id: "fullstack4j", label: "The fullstack4j toolbox", url: site.fullstack4j, text: "server-side rendered UIs in Apache Wicket" },
+    { id: "mongodb", label: "MongoDB batch tools", text: "for batch jobs that write to MongoDB" }
+  ] %}
+  {%- for group in projectGroups %}
+  <p class="meta project-group">{% if group.url %}<a href="{{ group.url }}">{{ group.label }}</a>{% else %}{{ group.label }}{% endif %} · {{ group.text }}</p>
+  <ul class="note-list project-list" aria-label="{{ group.label }}">
+    {%- for project in projects %}{% if project.group == group.id %}
     <li class="note-item">
       <a href="{{ project.url }}">
         <span class="kicker">{{ project.kicker }}</span>
@@ -69,8 +75,9 @@ ogKicker: Independent · Munich
         <p>{{ project.description }}</p>
       </a>
     </li>
-    {%- endfor %}
+    {%- endif %}{% endfor %}
   </ul>
+  {%- endfor %}
 </section>
 
 <section class="wrap section">
@@ -80,7 +87,7 @@ ogKicker: Independent · Munich
   </div>
 
   <a class="featured" href="{{ latest.url }}">
-    <p class="meta"><span class="badge">New</span> <time datetime="{{ latest.date | isoDate }}">{{ latest.date | readableDate }}</time> · {{ latest.content | readingTime }}</p>
+    <p class="meta">{% if latest.date | isRecent(60) %}<span class="badge">New</span> {% endif %}<time datetime="{{ latest.date | isoDate }}">{{ latest.date | readableDate }}</time> · {{ latest.content | readingTime }}</p>
     <h3>{{ latest.data.title }}</h3>
     <p>{{ latest.content | excerpt(320) }}</p>
     <span class="read-more">Continue reading →</span>
