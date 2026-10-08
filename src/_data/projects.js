@@ -27,4 +27,11 @@ export default [
     description:
       "A generic MongoDB collection comparator. After a batch job replaces your data, it compares the new collection with a backup and gives a GREEN, YELLOW or RED verdict on whether the result looks usable.",
   },
+  {
+    name: "diffsert",
+    kicker: "MongoDB × Spring Data",
+    url: "https://danielbartl.github.io/diffsert/",
+    description:
+      "Change-aware upserts for MongoDB and Spring Data. It writes every document but records only the fields that changed, so change streams and Debezium see small updates, and unchanged documents produce no event at all.",
+  },
 ];
