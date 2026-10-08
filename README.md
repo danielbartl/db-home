@@ -65,13 +65,15 @@ SIL Open Font License (see the `OFL-*.txt` files).
 
 Fonts are self-hosted (Newsreader, Geist, Geist Mono), so the site makes no third-party requests and uses no cookies or analytics.
 
-## Deploy: Cloudflare Pages
+## Deploy: GitHub Pages
 
-The site is hosted on Cloudflare Pages, which builds and deploys automatically on every push to `main`.
+The site is hosted on GitHub Pages. The workflow in `.github/workflows/deploy.yml` builds and deploys
+it on every push to `main` (Pages source: **Settings → Pages → Build and deployment → GitHub Actions**).
 
-1. **Workers & Pages → Create → Pages → Connect to Git** and select the repository.
-2. Build command: `npm run build`, build output directory: `_site`. Node version comes from `.node-version`.
-3. Add `danielbartl.com` under **Custom domains**.
+The domain and its DNS stay at Hover, which also holds the Fastmail records for email. For the site,
+Hover has the four GitHub Pages `A` records on the apex (`185.199.108.153`, `185.199.109.153`,
+`185.199.110.153`, `185.199.111.153`) and a `www` `CNAME` to `danielbartl.github.io`. The custom domain
+`danielbartl.com` is set under **Settings → Pages → Custom domain**, with **Enforce HTTPS** on.
 
 ## Old URLs
 
