@@ -52,6 +52,25 @@ ogKicker: Independent · Munich
   </div>
 </section>
 
+<section class="wrap section projects">
+  <div class="section-head">
+    <h2>Currently building</h2>
+  </div>
+  <p class="lede">Open-source tools for full-stack Java on Spring Boot: server-side rendered UIs in Apache Wicket, and data quality checks for MongoDB.</p>
+
+  <ul class="note-list">
+    {%- for project in projects %}
+    <li class="note-item">
+      <a href="{{ project.url }}">
+        <span class="kicker">{{ project.kicker }}</span>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
 <section class="wrap section">
   <div class="section-head">
     <h2>Latest notes</h2>
@@ -67,23 +86,4 @@ ogKicker: Independent · Munich
 
   {%- set notes = posts.slice(1, 7) %}
   {% include "note-list.njk" %}
-</section>
-
-<section class="wrap section projects">
-  <div class="section-head">
-    <h2>Currently building</h2>
-  </div>
-  <p class="lede">Open-source tools for full-stack Java applications with server-side rendered UIs in Apache Wicket.</p>
-
-  <ul class="note-list">
-    {%- for project in projects %}
-    <li class="note-item">
-      <a href="{{ project.url }}">
-        <span class="kicker">{{ project.kicker }}</span>
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
-      </a>
-    </li>
-    {%- endfor %}
-  </ul>
 </section>
