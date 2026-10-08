@@ -18,6 +18,8 @@ export default {
       "Most business software doesn’t need a frontend team, a backend team and an API between them. With plain Java from the database to the button, two or three people can own every feature end to end, and AI agents take the routine work off their hands. Together with my colleagues at allwerker, I set up, staff and coach such teams, working in Shape Up-style cycles.",
     visit: "Visit fullstack4j.dev",
     why: "Why full-stack? Read the note",
+    sliceCaption: "One slice, one owner: from the button to the database.",
+    sliceAlt: "One slice in Event Modeling notation: on the Open orders screen, the Ship button sends the command ShipOrder, which records the event OrderShipped. The next slice turns that event into the view OrdersToBill for the Billing screen.",
     stepsLabel: "How an engagement runs",
     steps: [
       {
@@ -46,6 +48,8 @@ export default {
       "Die meisten Geschäftsanwendungen brauchen kein Frontend-Team, kein Backend-Team und keine API dazwischen. Mit purem Java von der Datenbank bis zum Button verantworten zwei oder drei Leute jedes Feature von Anfang bis Ende, und KI-Agenten nehmen ihnen die Routinearbeit ab. Gemeinsam mit meinen Kolleginnen und Kollegen bei allwerker stelle ich solche Teams auf, besetze und begleite sie, in Zyklen nach dem Vorbild von Shape Up.",
     visit: "fullstack4j.dev besuchen",
     why: "Die Idee dahinter (engl.)",
+    sliceCaption: "Ein Slice, eine Person: vom Button bis zur Datenbank.",
+    sliceAlt: "Ein Slice in Event-Modeling-Notation: Auf dem Bildschirm Open orders schickt der Button Ship das Kommando ShipOrder, das das Ereignis OrderShipped festhält. Der nächste Slice macht daraus die Ansicht OrdersToBill für den Bildschirm Billing.",
     stepsLabel: "So läuft eine Zusammenarbeit ab",
     steps: [
       {

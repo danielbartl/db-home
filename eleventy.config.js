@@ -30,6 +30,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString());
   eleventyConfig.addFilter("year", (d) => new Date(d).getUTCFullYear());
   eleventyConfig.addFilter("absoluteUrl", (path, base) => new URL(path, base).href);
+  // Whether a date lies within the last `days` days, as of the build
+  eleventyConfig.addFilter("isRecent", (d, days = 60) => Date.now() - new Date(d).getTime() < days * 864e5);
 
   eleventyConfig.addFilter("excerpt", (html, length = 180) => {
     const text = stripHtml(html);

@@ -1,6 +1,8 @@
+// Grouped on the home page by `group`; the About page links to them by position, so keep the order.
 export default [
   {
     name: "Wicket Oat",
+    group: "fullstack4j",
     kicker: "Apache Wicket × Oat",
     url: "https://danielbartl.github.io/wicket-oat/",
     description:
@@ -8,6 +10,7 @@ export default [
   },
   {
     name: "Wicket Spring Boot Starter",
+    group: "fullstack4j",
     kicker: "Apache Wicket × Spring Boot",
     url: "https://danielbartl.github.io/wicket-spring-boot-starter/",
     description:
@@ -15,6 +18,7 @@ export default [
   },
   {
     name: "fullstack4j start",
+    group: "fullstack4j",
     kicker: "start.fullstack4j.dev",
     url: "https://start.fullstack4j.dev",
     description:
@@ -22,6 +26,7 @@ export default [
   },
   {
     name: "ditto",
+    group: "mongodb",
     kicker: "MongoDB × Spring Boot",
     url: "https://danielbartl.github.io/ditto/",
     description:
@@ -29,6 +34,7 @@ export default [
   },
   {
     name: "diffsert",
+    group: "mongodb",
     kicker: "MongoDB × Spring Data",
     url: "https://danielbartl.github.io/diffsert/",
     description:
