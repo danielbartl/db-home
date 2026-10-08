@@ -44,11 +44,9 @@ src/
   de/zusammenarbeit.njk   /de/zusammenarbeit/ (German)
   impressum.njk           legal notice
   datenschutz.njk         privacy policy
-  contact.njk, contact/   contact form with thank-you and error pages
   assets/                 CSS, JS, fonts (self-hosted), images
   static/                 copied to the site root (favicon, robots.txt)
 og/                       social preview image renderer (build time only)
-functions/api/contact.js  contact form handler (Cloudflare Pages Function)
 ```
 
 ## Social preview images
@@ -74,19 +72,6 @@ The site is hosted on Cloudflare Pages, which builds and deploys automatically o
 1. **Workers & Pages → Create → Pages → Connect to Git** and select the repository.
 2. Build command: `npm run build`, build output directory: `_site`. Node version comes from `.node-version`.
 3. Add `danielbartl.com` under **Custom domains**.
-
-### Contact form
-
-`/contact/` posts to a Cloudflare Pages Function (`functions/api/contact.js`), which delivers
-the message to the Fastmail inbox through Fastmail's JMAP API. It does not run under
-`npm start`; test it on a Cloudflare preview deployment.
-
-1. In Fastmail: **Settings → Privacy & Security → Manage API tokens → New API token**, with
-   access to *Email* and *Email submission*.
-2. In Cloudflare Pages: **Settings → Variables and secrets**, add `FASTMAIL_API_TOKEN`
-   (type *Secret*) for Production and Preview.
-3. Optional: `CONTACT_ADDRESS` if messages should go to another address than
-   `hello@danielbartl.com`. It must be a sending identity in Fastmail.
 
 ## Old URLs
 
