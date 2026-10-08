@@ -77,6 +77,23 @@ export default function (eleventyConfig) {
     return [...groups].map(([year, posts]) => ({ year, posts }));
   });
 
+  // Open links to other sites in a new tab, so readers keep their place here
+  const siteHost = new URL(site.url).host;
+  eleventyConfig.addTransform("externalLinks", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    return content.replace(/<a\s[^>]*>/g, (tag) => {
+      const href = tag.match(/\shref="(https?:\/\/[^"]+)"/)?.[1];
+      if (!href || /\starget=/.test(tag)) return tag;
+      const host = new URL(href).host.replace(/^www\./, "");
+      if (host === siteHost) return tag;
+      const rel = tag.match(/\srel="([^"]*)"/)?.[1];
+      const withRel = rel
+        ? tag.replace(/\srel="[^"]*"/, ` rel="${rel} noopener"`)
+        : tag.replace(/>$/, ' rel="noopener">');
+      return withRel.replace(/>$/, ' target="_blank">');
+    });
+  });
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",
