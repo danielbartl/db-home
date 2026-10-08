@@ -64,7 +64,7 @@ export default {
     ],
     certsTitle: "Certifications",
     certsAlso: "Also",
-    languages: "Languages: German, English and Croatian, all fluent.",
+    languages: "Languages: German, English and Bosnian/Croatian/Serbian, all fluent.",
     ctaTitle: "Let’s talk about your product.",
     ctaText:
       "Tell me a bit about your team, what you are building and where you need a hand. I am happy to have a first, no-strings conversation.",
@@ -134,7 +134,7 @@ export default {
     ],
     certsTitle: "Zertifizierungen",
     certsAlso: "Außerdem",
-    languages: "Sprachen: Deutsch, Englisch und Kroatisch, jeweils fließend.",
+    languages: "Sprachen: Deutsch, Englisch und Bosnisch/Kroatisch/Serbisch, jeweils fließend.",
     ctaTitle: "Lassen Sie uns über Ihr Produkt sprechen.",
     ctaText:
       "Erzählen Sie mir kurz von Ihrem Team, woran Sie arbeiten und wo Sie Unterstützung brauchen. Ich freue mich auf ein erstes, unverbindliches Gespräch.",

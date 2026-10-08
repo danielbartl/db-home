@@ -768,31 +768,6 @@ p { text-wrap: pretty; }
 .legal p + p { margin-top: 1rem; }
 .legal-updated { font-size: 0.9rem; color: var(--muted) !important; margin-top: 2.5rem !important; }
 
-/* ---------- Contact ---------- */
-.contact { max-width: calc(var(--measure) + 2 * var(--gutter)); }
-.contact h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
-.contact .lede { margin: 1rem 0 0; }
-.contact-form { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
-.contact-form label { display: grid; gap: 0.4rem; }
-.contact-form label span { font-weight: 500; font-size: 0.95rem; }
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
-  transition: border-color 0.15s ease;
-}
-.contact-form textarea { resize: vertical; min-height: 10rem; }
-.contact-form input:focus-visible,
-.contact-form textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
-.contact-form .button { justify-self: start; cursor: pointer; font: inherit; font-weight: 500; }
-.contact-note { margin: 0; font-size: 0.9rem; color: var(--muted); }
-.contact-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
-
 /* ---------- 404 ---------- */
 .not-found { text-align: center; padding-block: clamp(4rem, 12vw, 8rem); }
 .not-found .sticky { transform: rotate(-3deg); font-size: 1rem; padding: 1rem 1.4rem; }
