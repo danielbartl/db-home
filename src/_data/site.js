@@ -17,5 +17,6 @@ export default {
   xHandle: "@danielbartl",
   allwerker: "https://www.allwerker.com",
   ljug: "https://www.ljugminga.org/",
+  band: "https://071.band/",
   location: "Munich, Germany",
 };

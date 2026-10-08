@@ -38,7 +38,9 @@ Since the beginning of 2024, I have been working as an independent agile practit
 
 Since 2010, I have also been organizing the [Lightweight Java User Group]({{ site.ljug }}) in Munich.
 
-These days, I am mostly building open-source tooling for full-stack Java applications with server-side rendered UIs in Apache Wicket: [Wicket Oat]({{ projects[0].url }}), a themeable component library based on the [Oat](https://oat.ink/) CSS library, and the [Wicket Spring Boot Starter]({{ projects[1].url }}), which brings Wicket 10 to Spring Boot 4 with a single dependency.
+These days, I am mostly building open-source tooling for full-stack Java on Spring Boot. For server-side rendered UIs in Apache Wicket, there is [Wicket Oat]({{ projects[0].url }}), a themeable component library based on the [Oat](https://oat.ink/) CSS library, the [Wicket Spring Boot Starter]({{ projects[1].url }}), which brings Wicket 10 to Spring Boot 4 with a single dependency, and [fullstack4j start]({{ projects[2].url }}), a fork of [start.spring.io](https://start.spring.io) that adds Wicket to the Spring Initializr. For data quality checks, [ditto]({{ projects[3].url }}) compares two MongoDB collections and tells you whether a batch run produced data you can use.
+
+I also write lyrics for [071 Band]({{ site.band }}), named after Sarajevo's telephone area code. The songs are in Bosnian and remember the people, the city and the world I grew up with. The lyrics are all mine; the music is AI-generated. You can find more about the band on its page.
 
 You can reach me at [{{ site.email }}](mailto:{{ site.email }}), on [LinkedIn]({{ site.linkedin }}) and on [X]({{ site.x }}). My open-source work is on [GitHub]({{ site.github }}).
 
