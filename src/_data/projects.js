@@ -22,7 +22,7 @@ export default [
     kicker: "start.fullstack4j.dev",
     url: "https://start.fullstack4j.dev",
     description:
-      "start.spring.io with Apache Wicket. A fork of the Spring Initializr that offers everything upstream does, plus Wicket through the Spring Boot starter, with Maven as the default build.",
+      "start.spring.io with Apache Wicket and the whole fullstack4j stack. A fork of the Spring Initializr that offers everything upstream does, plus Wicket through its Spring Boot starter and a fullstack4j entry for the two fullstack4j starters, with Maven as the default build.",
   },
   {
     name: "ditto",
