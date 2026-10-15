@@ -40,4 +40,12 @@ export default [
     description:
       "Change-aware upserts for MongoDB and Spring Data. It writes every document but records only the fields that changed, so change streams and Debezium see small updates, and unchanged documents produce no event at all.",
   },
+  {
+    name: "fullstack4j Spring Boot Starter",
+    group: "fullstack4j",
+    kicker: "fullstack4j × Spring Boot",
+    url: "https://danielbartl.github.io/fullstack4j-spring-boot-starter/",
+    description:
+      "The whole fullstack4j stack in two dependencies: Apache Wicket with Wicket Oat, Spring Modulith and MongoDB at versions that work together, plus a test starter with a MongoDB replica set from Testcontainers.",
+  },
 ];

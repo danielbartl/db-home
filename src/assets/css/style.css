@@ -531,6 +531,8 @@ p { text-wrap: pretty; }
 .project-group a:hover { text-decoration: underline; }
 /* fill the row, so a group of two has no gap */
 .project-list { margin-top: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+/* two columns for an even number, so a group of four is a square rather than three and one */
+.project-list:has(> li:nth-child(even):last-child) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
 
 /* fullstack4j offering */
 .offering-section + .projects { padding-top: 0; }
