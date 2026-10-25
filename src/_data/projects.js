@@ -48,4 +48,12 @@ export default [
     description:
       "The whole fullstack4j stack in two dependencies: Apache Wicket with Wicket Oat, Spring Modulith and MongoDB at versions that work together, plus a test starter with a MongoDB replica set from Testcontainers.",
   },
+  {
+    name: "wicket-testkit",
+    group: "fullstack4j",
+    kicker: "Apache Wicket × WicketTester",
+    url: "https://danielbartl.github.io/wicket-testkit/",
+    description:
+      "Readable, refactoring-proof Wicket tests. It finds components by type, wicket:id, model object or the row they sit in instead of string paths like \"orders:1:customer\", and acts and asserts on them through your own WicketTester.",
+  },
 ];
